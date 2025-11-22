@@ -5,6 +5,7 @@ import android.view.Menu;
 
 import com.google.android.material.navigation.NavigationView;
 
+import androidx.core.view.WindowCompat;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -16,7 +17,6 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
-import aahl.appbd.R;
 import aahl.appbd.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
@@ -27,6 +27,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        // Habilitar edge-to-edge
+        WindowCompat.setDecorFitsSystemWindows(getWindow(), false);
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
