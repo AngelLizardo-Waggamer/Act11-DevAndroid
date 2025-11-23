@@ -22,6 +22,7 @@ import aahl.appbd.databinding.FragmentHomeBinding;
 
 public class HomeFragment extends Fragment {
 
+    private final int PADDING_BOTTOM_DISCLAIMER = 20;
     private ImageView ivFondoHome;
 
     private FragmentHomeBinding binding;
@@ -72,7 +73,7 @@ public class HomeFragment extends Fragment {
                 tvDisclaimer.getPaddingLeft(),
                 tvDisclaimer.getPaddingTop(),
                 tvDisclaimer.getPaddingRight(),
-                navBarInsets.bottom + 20 // 20dp extra de padding además del inset de la barra de navegación
+                navBarInsets.bottom + PADDING_BOTTOM_DISCLAIMER
             );
 
             return windowInsets;
