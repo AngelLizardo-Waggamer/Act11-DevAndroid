@@ -39,7 +39,9 @@ public class MainActivity extends AppCompatActivity {
         NavigationView navigationView = binding.navView;
 
         Set<Integer> topLevelDestinations = new HashSet<>(Arrays.asList(
-                R.id.nav_home
+                R.id.nav_home,
+                R.id.nav_manage,
+                R.id.nav_visualize
         ));
 
         mAppBarConfiguration = new AppBarConfiguration.Builder(topLevelDestinations)
