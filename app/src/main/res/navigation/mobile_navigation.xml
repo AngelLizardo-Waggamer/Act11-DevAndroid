@@ -13,12 +13,12 @@
     <fragment
         android:id="@+id/nav_manage"
         android:name="aahl.appbd.ui.manage.ManageFragment"
-        android:label="ManageFragment"
+        android:label="Manage"
         tools:layout="@layout/fragment_manage"/>
     <fragment
         android:id="@+id/nav_visualize"
         android:name="aahl.appbd.ui.visualize.VisualizeFragment"
-        android:label="VisualizeFragment"
+        android:label="Visualize"
         tools:layout="@layout/fragment_visualize"/>"
 />
 
