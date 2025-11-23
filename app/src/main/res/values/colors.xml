@@ -7,4 +7,20 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!-- Color Primario: Un azul marino profundo. Profesional y serio. -->
+    <color name="brand_primary">#1F3B58</color>
+
+    <!-- Color Secundario/Acento: Un amarillo dorado que combina con la cinta de tu logo. -->
+    <color name="brand_accent">#F4D03F</color>
+
+    <!-- Color de Fondo: Un gris azulado muy tenue. Menos agresivo que el blanco puro. -->
+    <color name="background_screen">#F4F6F8</color>
+
+    <!-- Colores de Texto -->
+    <color name="text_primary">#1F3B58</color> <!-- Título -->
+    <color name="text_secondary">#546E7A</color> <!-- Subtítulo -->
+    <color name="text_button">#FFFFFF</color>     <!-- Texto dentro de botones oscuros -->
+    <color name="text_disclaimer">#B0BEC5</color> <!-- Texto legal al pie de página -->
+
 </resources>
