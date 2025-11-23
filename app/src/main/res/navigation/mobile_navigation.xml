@@ -10,5 +10,16 @@
         android:name="aahl.appbd.ui.home.HomeFragment"
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/nav_manage"
+        android:name="aahl.appbd.ui.manage.ManageFragment"
+        android:label="ManageFragment"
+        tools:layout="@layout/fragment_manage"/>
+    <fragment
+        android:id="@+id/nav_visualize"
+        android:name="aahl.appbd.ui.visualize.VisualizeFragment"
+        android:label="VisualizeFragment"
+        tools:layout="@layout/fragment_visualize"/>"
+/>
 
 </navigation>
