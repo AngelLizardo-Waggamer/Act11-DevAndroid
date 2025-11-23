@@ -20,6 +20,5 @@
         android:name="aahl.appbd.ui.visualize.VisualizeFragment"
         android:label="Visualize"
         tools:layout="@layout/fragment_visualize"/>
-/>
 
 </navigation>
