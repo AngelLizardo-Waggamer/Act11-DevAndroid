@@ -71,7 +71,7 @@ public class VisualizeFragment extends Fragment {
 
         // Si no hay ningún inventario disponible, mostrar un Toast indicando que no hay inventarios
         if (!isAnyInventoryAvailable) {
-            showToast("No hay inventarios disponibles");
+            showToast("There are no inventories");
             feedbackNegativoPorNoInventarios();
             return view;
         }
