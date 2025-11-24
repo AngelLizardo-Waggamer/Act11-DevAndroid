@@ -21,4 +21,46 @@
         android:label="Visualize"
         tools:layout="@layout/fragment_visualize"/>
 
+    <fragment
+        android:id="@+id/manage_inventories"
+        android:label="Manage Inventories"
+        tools:layout="@layout/fragment_inventories"
+        android:name="aahl.appbd.ui.manage.inventories.ManageInventories"
+        />
+
+    <fragment
+        android:id="@+id/manage_products"
+        android:label="Manage Products"
+        tools:layout="@layout/hub_products"
+        android:name="aahl.appbd.ui.manage.products.ManageProducts"
+        />
+
+    <fragment
+        android:id="@+id/products_modify"
+        android:label="Products"
+        tools:layout="@layout/products_detailed"
+        android:name="aahl.appbd.ui.manage.products.modification.ProductModify"
+        />
+
+    <fragment
+        android:id="@+id/add_edit_product"
+        android:label="Add/Edit Product"
+        tools:layout="@layout/add_edit_product"
+        android:name="aahl.appbd.ui.manage.products.modification.add_edit_product"
+        />
+
+    <fragment
+        android:id="@+id/audit_products"
+        android:label="Audit"
+        tools:layout="@layout/fragment_audit_products"
+        android:name="aahl.appbd.ui.manage.products.audit.ProductAuditing"
+        />
+
+    <fragment
+        android:id="@+id/add_edit_inventory"
+        android:label="Add/Edit Inventory"
+        tools:layout="@layout/add_edit_inventory"
+        android:name="aahl.appbd.ui.manage.inventories.modification.add_edit_inventory"
+        />
+
 </navigation>
