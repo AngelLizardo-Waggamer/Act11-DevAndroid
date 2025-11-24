@@ -1,9 +1,11 @@
 package aahl.appbd.models;
 
+import java.io.Serializable;
+
 /**
  * Modelo que representa un Producto en la base de datos.
  */
-public class Product {
+public class Product implements Serializable {
 
     private long id;
     private String name;

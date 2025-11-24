@@ -1,11 +1,11 @@
 package aahl.appbd.ui.home;
 
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -14,6 +14,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import com.hoko.blur.HokoBlur;
 
@@ -24,6 +25,7 @@ public class HomeFragment extends Fragment {
 
     private final int PADDING_BOTTOM_DISCLAIMER = 20;
     private ImageView ivFondoHome;
+    private Button btnManage, btnVisualize;
 
     private FragmentHomeBinding binding;
 
@@ -71,5 +73,23 @@ public class HomeFragment extends Fragment {
 
             return windowInsets;
         });
+    }
+
+    private void configurarListenersEnBotones(View view){
+        btnManage = view.findViewById(R.id.btnNavegarManage);
+        btnVisualize = view.findViewById(R.id.btnNavegarVisualizer);
+
+        // setup sencillo para navegar a manage
+        btnManage.setOnClickListener(v -> {
+            Navigation.findNavController(view)
+                    .navigate(R.id.action_nav_home_to_nav_manage);
+        });
+
+        // setup sencillo para navegar a visualize
+        btnVisualize.setOnClickListener(v -> {
+            Navigation.findNavController(view)
+                    .navigate(R.id.action_nav_home_to_nav_visualize);
+        });
+
     }
 }

@@ -1,9 +1,11 @@
 package aahl.appbd.models;
 
+import java.io.Serializable;
+
 /**
  * Modelo que representa un Inventario en la base de datos.
  */
-public class Inventory {
+public class Inventory implements Serializable {
 
     private long id;
     private String name;
