@@ -46,15 +46,8 @@ public class HomeFragment extends Fragment {
     private void aplicarBlurAlFondo(View view){
         ivFondoHome = view.findViewById(R.id.ivFondoHome);
 
-        Bitmap imgFondo = BitmapFactory.decodeResource(getResources(), R.drawable.logisticaimagenstock);
-
-        Bitmap imgFondoConBlur = HokoBlur.with(requireContext())
-                .scheme(HokoBlur.SCHEME_NATIVE)
-                .mode(HokoBlur.MODE_STACK)
-                .radius(10)
-                .blur(imgFondo);
-
-        ivFondoHome.setImageBitmap(imgFondoConBlur);
+        Bitmap imgFondo = BackBlurHandler.getBlurredBackground(requireContext());
+        ivFondoHome.setImageBitmap(imgFondo);
     }
 
     private void configurarEdgeToEdge(View view) {
