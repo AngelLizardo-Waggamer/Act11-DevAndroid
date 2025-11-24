@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     android:background="@color/background_screen">
 
-    <!-- Barra de Búsqueda -->
     <EditText
         android:id="@+id/etSearch"
         android:enabled="true"
@@ -25,7 +24,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- Filtro de Inventario (Spinner) -->
     <TextView
         android:id="@+id/tvLabelInventory"
         android:layout_marginStart="20dp"
@@ -49,7 +47,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvLabelInventory" />
 
-    <!-- La lista de productos -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvProducts"
         android:enabled="true"
