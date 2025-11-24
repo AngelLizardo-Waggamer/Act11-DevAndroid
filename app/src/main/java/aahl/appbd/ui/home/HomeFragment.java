@@ -48,7 +48,7 @@ public class HomeFragment extends Fragment {
 
         Bitmap imgFondo = BitmapFactory.decodeResource(getResources(), R.drawable.logisticaimagenstock);
 
-        Bitmap imgFondoConBlur = HokoBlur.with(getContext())
+        Bitmap imgFondoConBlur = HokoBlur.with(requireContext())
                 .scheme(HokoBlur.SCHEME_NATIVE)
                 .mode(HokoBlur.MODE_STACK)
                 .radius(10)
