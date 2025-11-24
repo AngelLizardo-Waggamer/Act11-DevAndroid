@@ -9,12 +9,26 @@
         android:id="@+id/nav_home"
         android:name="aahl.appbd.ui.home.HomeFragment"
         android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_nav_home_to_nav_manage"
+            app:destination="@id/nav_manage" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_visualize"
+            app:destination="@id/nav_visualize" />
+    </fragment>
     <fragment
         android:id="@+id/nav_manage"
         android:name="aahl.appbd.ui.manage.ManageFragment"
         android:label="Manage"
-        tools:layout="@layout/fragment_manage"/>
+        tools:layout="@layout/fragment_manage">
+        <action
+            android:id="@+id/action_nav_manage_to_manage_inventories"
+            app:destination="@id/manage_inventories" />
+        <action
+            android:id="@+id/action_nav_manage_to_manage_products"
+            app:destination="@id/manage_products" />
+    </fragment>
     <fragment
         android:id="@+id/nav_visualize"
         android:name="aahl.appbd.ui.visualize.VisualizeFragment"
@@ -26,41 +40,78 @@
         android:label="Manage Inventories"
         tools:layout="@layout/fragment_inventories"
         android:name="aahl.appbd.ui.manage.inventories.ManageInventories"
-        />
+        >
+        <action
+            android:id="@+id/action_manage_inventories_to_add_edit_inventory"
+            app:destination="@id/add_edit_inventory" />
+    </fragment>
 
     <fragment
         android:id="@+id/manage_products"
         android:label="Manage Products"
         tools:layout="@layout/hub_products"
         android:name="aahl.appbd.ui.manage.products.ManageProducts"
-        />
+        >
+        <action
+            android:id="@+id/action_manage_products_to_products_modify"
+            app:destination="@id/products_modify" />
+        <action
+            android:id="@+id/action_manage_products_to_audit_products"
+            app:destination="@id/audit_products" />
+    </fragment>
 
     <fragment
         android:id="@+id/products_modify"
         android:label="Products"
         tools:layout="@layout/products_detailed"
         android:name="aahl.appbd.ui.manage.products.modification.ProductModify"
-        />
+        >
+        <action
+            android:id="@+id/action_products_modify_to_add_edit_product"
+            app:destination="@id/add_edit_product" />
+        <argument
+            android:name="id_inventory"
+            app:argType="integer"
+            android:defaultValue="-1"
+            />
+    </fragment>
 
     <fragment
         android:id="@+id/add_edit_product"
         android:label="Add/Edit Product"
         tools:layout="@layout/add_edit_product"
-        android:name="aahl.appbd.ui.manage.products.modification.add_edit_product"
-        />
+        android:name="aahl.appbd.ui.manage.products.modification.add_edit_product">
+        <argument
+            android:name="product"
+            app:argType="aahl.appbd.models.Product"
+            app:nullable="true"
+            android:defaultValue="@null"
+            />
+    </fragment>
 
     <fragment
         android:id="@+id/audit_products"
         android:label="Audit"
         tools:layout="@layout/fragment_audit_products"
-        android:name="aahl.appbd.ui.manage.products.audit.ProductAuditing"
-        />
+        android:name="aahl.appbd.ui.manage.products.audit.ProductAuditing">
+        <argument
+            android:name="id_inventory"
+            app:argType="integer"
+            android:defaultValue="-1"
+            />
+    </fragment>
 
     <fragment
         android:id="@+id/add_edit_inventory"
         android:label="Add/Edit Inventory"
         tools:layout="@layout/add_edit_inventory"
-        android:name="aahl.appbd.ui.manage.inventories.modification.add_edit_inventory"
-        />
+        android:name="aahl.appbd.ui.manage.inventories.modification.add_edit_inventory">
+        <argument
+            android:name="inventory"
+            app:argType="aahl.appbd.models.Inventory"
+            app:nullable="true"
+            android:defaultValue="@null"
+            />
+    </fragment>
 
 </navigation>
