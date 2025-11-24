@@ -37,7 +37,6 @@ public class VisualizeFragment extends Fragment {
     private final int MARGIN_EXTRA_BOTTOM_RECYCLERVIEW = 20;
 
     private RecyclerView recyclerView;
-    private ProductAdapter productAdapter;
     private Spinner spinner;
     private EditText etSearch;
     private ProductAdapter adapter;
