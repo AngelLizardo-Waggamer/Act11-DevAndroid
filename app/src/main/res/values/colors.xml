@@ -8,6 +8,13 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
+    <!-- Colores de Estado (Indicadores de Stock) -->
+    <color name="status_in_stock">#2E7D32</color>  <!-- Verde profesional -->
+    <color name="status_out_of_stock">#C62828</color> <!-- Rojo alerta -->
+
+    <!-- Color para elementos deshabilitados o fondos de contenedores vacíos -->
+    <color name="surface_disabled">#CFD8DC</color> <!-- Gris azulado armónico -->
+
     <!-- Color Primario: Un azul marino profundo. Profesional y serio. -->
     <color name="brand_primary">#1F3B58</color>
 
