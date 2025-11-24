@@ -53,7 +53,7 @@
                 android:id="@+id/iconProducts"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
-                android:src="@drawable/inventory_24"
+                android:src="@drawable/ic_package_24"
                 app:tint="@color/brand_accent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
