@@ -15,7 +15,6 @@
         android:layout_height="wrap_content"
         android:padding="12dp">
 
-        <!-- Barra de color lateral para indicar estado (ej. verde si hay stock, rojo si no) -->
         <View
             android:id="@+id/statusIndicator"
             android:layout_width="4dp"
@@ -51,14 +50,12 @@
             app:layout_constraintStart_toEndOf="@+id/statusIndicator"
             app:layout_constraintTop_toBottomOf="@id/tvProductName" />
 
-        <!-- Icono/Botón para editar (Lleva a Modify Product) -->
         <ImageView
             android:id="@+id/btnEdit"
             android:layout_width="32dp"
             android:layout_height="32dp"
-            android:src="@android:drawable/ic_menu_edit"
+            android:src="@drawable/ic_edit_24"
             app:tint="@color/text_secondary"
-            android:background="?attr/selectableItemBackgroundBorderless"
             android:clickable="true"
             android:focusable="true"
             app:layout_constraintBottom_toBottomOf="parent"
