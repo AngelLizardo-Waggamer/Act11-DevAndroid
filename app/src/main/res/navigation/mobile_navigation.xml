@@ -75,8 +75,8 @@
             app:destination="@id/add_edit_product" />
         <argument
             android:name="id_inventory"
-            app:argType="integer"
-            android:defaultValue="-1"
+            app:argType="long"
+            android:defaultValue="0L"
             />
     </fragment>
 
@@ -100,8 +100,8 @@
         android:name="aahl.appbd.ui.manage.products.audit.ProductAuditing">
         <argument
             android:name="id_inventory"
-            app:argType="integer"
-            android:defaultValue="-1"
+            app:argType="long"
+            android:defaultValue="0L"
             />
     </fragment>
 
