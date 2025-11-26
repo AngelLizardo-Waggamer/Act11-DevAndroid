@@ -75,12 +75,9 @@ public class ManageProducts extends Fragment {
         obtenerInventarios();
 
         // Construir las opciones del spinner
-        List<String> opciones = isAnyInventoryAvailable ?
-                inventories.stream().map(Inventory::getName).toList():
-                List.of("No inventories detected");
-
-        // Esto hace que el spinner inicie sin "nada" seleccionado
-        if (isAnyInventoryAvailable) opciones.addFirst("");
+        ArrayList<String> opciones = isAnyInventoryAvailable ?
+                new ArrayList<>(inventories.stream().map(Inventory::getName).toList()):
+                new ArrayList<>(List.of("No inventories detected"));
 
         // Después construir el adapter
         ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<>(
@@ -107,13 +104,7 @@ public class ManageProducts extends Fragment {
 
     private void manejarInventarioSeleccionado(AdapterView<?> parent, View view, int position, long id) {
 
-        if (selectedInventory != null && position == 0) {
-            selectedInventory = null;
-            deshabilitarNavegacion();
-            return;
-        }
-
-        if (position == 0) return;
+        if (inventories.isEmpty()) return; // Validar que la lista de inventarios no esté vacía, si sí, no se ejecuta directamente.
 
         selectedInventory = inventories.get(position);
         habilitarNavegacion();
