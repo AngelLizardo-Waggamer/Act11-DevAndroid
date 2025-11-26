@@ -41,6 +41,9 @@ public class HomeFragment extends Fragment {
        // Configurar edge-to-edge para que el contenido se dibuje detrás de la barra de navegación
        configurarEdgeToEdge(view);
 
+       // Configurar listeners para que se pueda navegar a las otras pantallas.
+       configurarListenersEnBotones(view);
+
        // Devolver la vista inicializada
        return view;
     }
@@ -79,15 +82,15 @@ public class HomeFragment extends Fragment {
         btnManage = view.findViewById(R.id.btnNavegarManage);
         btnVisualize = view.findViewById(R.id.btnNavegarVisualizer);
 
-        // setup sencillo para navegar a manage
+        // setup para navegar a manage con el comportamiento correcto definido en el XML
         btnManage.setOnClickListener(v -> {
-            Navigation.findNavController(view)
+            Navigation.findNavController(v)
                     .navigate(R.id.action_nav_home_to_nav_manage);
         });
 
-        // setup sencillo para navegar a visualize
+        // setup para navegar a visualize con el comportamiento correcto definido en el XML
         btnVisualize.setOnClickListener(v -> {
-            Navigation.findNavController(view)
+            Navigation.findNavController(v)
                     .navigate(R.id.action_nav_home_to_nav_visualize);
         });
 
