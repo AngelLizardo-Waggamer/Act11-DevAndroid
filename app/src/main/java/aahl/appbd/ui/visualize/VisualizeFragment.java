@@ -119,12 +119,9 @@ public class VisualizeFragment extends Fragment {
         obtenerInventarios();
 
         // Construir opciones del spinner dependiendo de si hay inventarios o nepe
-        List<String> opciones = isAnyInventoryAvailable ?
-                inventories.stream().map(Inventory::getName).toList():
-                List.of("No inventories detected");
-
-        // Esto se hace para que el spinner inicie sin "nada" seleccionado
-        if (isAnyInventoryAvailable) opciones.addFirst("");
+        ArrayList<String> opciones = isAnyInventoryAvailable ?
+                new ArrayList<>(inventories.stream().map(Inventory::getName).toList()):
+                new ArrayList<>(List.of("No inventories detected"));
 
         // Después construir el Adapter
         ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<>(
@@ -151,7 +148,7 @@ public class VisualizeFragment extends Fragment {
 
     private void manejarInventarioSeleccionado(AdapterView<?> parent, View view, int position, long id) {
 
-        if (position == 0) return; // Considerar el espacio en blanco al inicio o el mensaje de que no hay inventarios
+        if (inventories.isEmpty()) return; // Mejor validar si existen o no inventarios directamente
 
         // Inventario seleccionado
         Inventory selectedInventory = inventories.get(position);
