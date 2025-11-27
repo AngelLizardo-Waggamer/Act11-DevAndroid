@@ -1,5 +1,6 @@
 package aahl.appbd.ui.manage.products.audit;
 
+import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -56,10 +57,36 @@ public class AuditingProductAdapter extends RecyclerView.Adapter<AuditingProduct
         // Remover listeners anteriores para evitar duplicados
         holder.etAuditQty.setTag(null);
 
-        // Agregar listener para detectar cambios en el EditText
-        if (textChangeListener != null) {
-            holder.etAuditQty.addTextChangedListener(textChangeListener);
-        }
+        // Crear un TextWatcher que tenga acceso al ViewHolder actual
+        TextWatcher editTextWatcher = new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                // No necesitamos hacer nada aquí
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                // Marcar automáticamente la checkbox cuando se modifica el texto
+                // Solo se hace una vez, cuando aún no está marcada
+                if (!holder.cbAudit.isChecked()) {
+                    holder.cbAudit.setChecked(true);
+                }
+
+                // Notificar al listener externo después de marcar la checkbox
+                // Esto asegura que hasAnyChangeBeenMade se actualice
+                if (textChangeListener != null) {
+                    textChangeListener.onTextChanged(s, start, before, count);
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                // No necesitamos hacer nada aquí
+            }
+        };
+
+        // Agregar el listener al EditText
+        holder.etAuditQty.addTextChangedListener(editTextWatcher);
     }
 
     @Override
