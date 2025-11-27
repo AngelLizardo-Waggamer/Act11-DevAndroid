@@ -5,6 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.time.Instant;
@@ -43,7 +44,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductViewHolder>{
         Product product = productList.get(position);
         holder.tvProductName.setText(product.getName());
         holder.tvProductDetails.setText(generarDetallesDeProducto(product));
-        holder.statusIndicator.setBackgroundColor(asignarColorDeFondoBasadoEnStock(product));
+        holder.statusIndicator.setBackgroundColor(ContextCompat.getColor(holder.itemView.getContext(), asignarColorDeFondoBasadoEnStock(product)));
     }
 
     @Override
