@@ -108,6 +108,11 @@
             app:argType="long"
             android:defaultValue="0L"
             />
+        <action
+            android:id="@+id/action_audit_products_to_manage_products"
+            app:destination="@id/manage_products"
+            app:popUpTo="@id/manage_products"
+            app:popUpToInclusive="true"/>
     </fragment>
 
     <fragment
