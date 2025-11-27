@@ -1,13 +1,9 @@
 package aahl.appbd.ui.visualize;
 
-import static androidx.core.content.ContextCompat.getSystemService;
-
-import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
@@ -154,7 +150,9 @@ public class VisualizeFragment extends Fragment {
         Inventory selectedInventory = inventories.get(position);
 
         // Obtener todos los productos de un inventario
-        products = dbOps.getProductsByInventory(selectedInventory.getId());
+        // Usar clear() y addAll() para mantener la referencia de la lista
+        products.clear();
+        products.addAll(dbOps.getProductsByInventory(selectedInventory.getId()));
 
         // Lógica para notificar al recyclerView que el dataset de productos cambió
         adapter.notifyDataSetChanged();
