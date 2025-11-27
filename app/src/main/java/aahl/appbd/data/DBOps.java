@@ -220,11 +220,11 @@ public class DBOps {
      * Lógica del Checklist.
      * Solo actualiza la fecha de verificación.
      */
-    public boolean checkProduct(long id) {
+    public boolean checkProduct(long id, long millis){
         open();
         try {
             ContentValues values = new ContentValues();
-            values.put("last_checked_at", System.currentTimeMillis());
+            values.put("last_checked_at", millis);
 
             return db.update("products", values, "id = ?", new String[]{String.valueOf(id)}) > 0;
         } finally {
