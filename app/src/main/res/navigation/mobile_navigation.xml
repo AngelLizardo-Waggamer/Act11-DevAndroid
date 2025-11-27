@@ -91,6 +91,11 @@
             app:nullable="true"
             android:defaultValue="@null"
             />
+        <action
+            android:id="@+id/action_addedit_products_to_products_modify"
+            app:destination="@id/products_modify"
+            app:popUpTo="@id/products_modify"
+            app:popUpToInclusive="true"/>
     </fragment>
 
     <fragment
@@ -116,6 +121,10 @@
             app:nullable="true"
             android:defaultValue="@null"
             />
+        <argument
+            android:name="id_inventory"
+            app:argType="long"
+            android:defaultValue="0L"/>
         <action
             android:id="@+id/action_addedit_to_manage_inventories"
             app:destination="@id/manage_inventories"
