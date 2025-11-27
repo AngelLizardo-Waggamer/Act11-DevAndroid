@@ -75,8 +75,8 @@ public class ManageInventories extends Fragment {
             public void onDeleteInventoryClicked(int position) {
                 new AlertDialog.Builder(getContext())
                         .setTitle("Confirm deletion")
-                        .setMessage("Are you sure that you want to delete the inventory " + inventoryList.get(position).getName()
-                        + " from the database? This action is not reversible and all the items contained within it will be erased.")
+                        .setMessage("Are you sure that you want to delete the inventory \"" + inventoryList.get(position).getName()
+                        + "\" from the database? This action is not reversible and all the items contained within it will be erased.")
                         .setPositiveButton("Yes", (dialog, which) -> borrarInventario(position))
                         .setNegativeButton("No", null)
                         .setCancelable(false)
