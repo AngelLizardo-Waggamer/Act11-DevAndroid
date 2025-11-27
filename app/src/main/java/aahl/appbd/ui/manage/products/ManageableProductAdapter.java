@@ -35,7 +35,6 @@ public class ManageableProductAdapter extends RecyclerView.Adapter<ManageablePro
 
     @Override
     public void onBindViewHolder(@NonNull ManageableProductViewHolder holder, int position) {
-        // TODO: Mostrar los datos para cada producto
         Product product = productList.get(position);
         holder.tvProdName.setText(product.getName());
         holder.tvProdQty.setText("|  Qty: " + product.getQuantity());
