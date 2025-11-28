@@ -15,6 +15,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -159,7 +160,27 @@ public class VisualizeFragment extends Fragment {
     }
 
     private void navegarAEditarProducto(int position){
-        // TODO: Implementar navegación
+        // Validar que la posición es válida
+        if (position < 0 || position >= products.size()) return;
+
+        // Obtener el producto seleccionado
+        Product selectedProduct = products.get(position);
+
+        // Obtener el inventario actual seleccionado en el spinner
+        int selectedInventoryPosition = spinner.getSelectedItemPosition();
+        if (selectedInventoryPosition < 0 || selectedInventoryPosition >= inventories.size()) return;
+
+        long selectedInventoryId = inventories.get(selectedInventoryPosition).getId();
+
+        // Crear el Bundle con los datos necesarios
+        Bundle bundle = new Bundle();
+        bundle.putSerializable("product", selectedProduct);
+        bundle.putLong("id_inventory", selectedInventoryId);
+        bundle.putString("source", "visualize"); // Indicar el origen de la navegación
+
+        // Navegar a la pantalla de edición
+        Navigation.findNavController(requireView())
+                .navigate(R.id.action_visualize_to_add_edit_product, bundle);
     }
 
     private void obtenerInventarios() {

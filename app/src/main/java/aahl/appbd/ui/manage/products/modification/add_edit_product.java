@@ -22,6 +22,7 @@ public class add_edit_product extends Fragment {
 
     private Product bundledProduct;
     private long id_inventory;
+    private String source; // Origen de la navegación: "visualize" o "modify"
     private boolean isNewProduct = false;
     private TextInputEditText etProdName, etProdQty, etProdPrice;
     private DBOps dbOps;
@@ -53,6 +54,7 @@ public class add_edit_product extends Fragment {
         if (getArguments() == null) return;
         bundledProduct = getArguments().getSerializable("product", Product.class);
         id_inventory = getArguments().getLong("id_inventory");
+        source = getArguments().getString("source"); // Obtener el origen
 
         if (bundledProduct == null) isNewProduct = true;
     }
@@ -64,8 +66,8 @@ public class add_edit_product extends Fragment {
 
         if (!isNewProduct) {
             etProdName.setText(bundledProduct.getName());
-            etProdQty.setText(bundledProduct.getQuantity());
-            etProdPrice.setText(Double.toString(bundledProduct.getUnitPrice()));
+            etProdQty.setText(String.valueOf(bundledProduct.getQuantity()));
+            etProdPrice.setText(String.valueOf(bundledProduct.getUnitPrice()));
         }
     }
 
@@ -118,8 +120,16 @@ public class add_edit_product extends Fragment {
         Bundle bundle = new Bundle();
         bundle.putLong("id_inventory", id_inventory);
 
-        Navigation.findNavController(view)
-                .navigate(R.id.action_addedit_products_to_products_modify, bundle);
+        // Determinar a dónde navegar según el origen
+        if ("visualize".equals(source)) {
+            // Si viene de VisualizeFragment, regresar allí
+            Navigation.findNavController(view)
+                    .navigate(R.id.action_addedit_products_to_visualize, bundle);
+        } else {
+            // Si viene de ProductModify o cualquier otro origen, usar el comportamiento original
+            Navigation.findNavController(view)
+                    .navigate(R.id.action_addedit_products_to_products_modify, bundle);
+        }
     }
 
 }

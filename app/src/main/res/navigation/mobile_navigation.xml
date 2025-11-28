@@ -37,7 +37,11 @@
         android:id="@+id/nav_visualize"
         android:name="aahl.appbd.ui.visualize.VisualizeFragment"
         android:label="Visualize"
-        tools:layout="@layout/fragment_visualize"/>
+        tools:layout="@layout/fragment_visualize">
+        <action
+            android:id="@+id/action_visualize_to_add_edit_product"
+            app:destination="@id/add_edit_product" />
+    </fragment>
 
     <fragment
         android:id="@+id/manage_inventories"
@@ -91,10 +95,21 @@
             app:nullable="true"
             android:defaultValue="@null"
             />
+        <argument
+            android:name="source"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="@null"
+            />
         <action
             android:id="@+id/action_addedit_products_to_products_modify"
             app:destination="@id/products_modify"
             app:popUpTo="@id/products_modify"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_addedit_products_to_visualize"
+            app:destination="@id/nav_visualize"
+            app:popUpTo="@id/nav_visualize"
             app:popUpToInclusive="true"/>
     </fragment>
 

@@ -62,6 +62,7 @@ public class ProductModify extends Fragment {
                 Bundle bundle = new Bundle();
                 bundle.putSerializable("product", productList.get(position));
                 bundle.putLong("id_inventory", obtenerIdDelInventarioCorrespondiente());
+                bundle.putString("source", "modify"); // Indicar que viene de ProductModify
 
                 Navigation.findNavController(view)
                         .navigate(R.id.action_products_modify_to_add_edit_product, bundle);
@@ -88,6 +89,7 @@ public class ProductModify extends Fragment {
         fabNuevoProducto.setOnClickListener(v -> {
             Bundle bundle = new Bundle();
             bundle.putLong("id_inventory", obtenerIdDelInventarioCorrespondiente());
+            bundle.putString("source", "modify"); // Indicar que viene de ProductModify
 
             Navigation.findNavController(v)
                     .navigate(R.id.action_products_modify_to_add_edit_product, bundle);
